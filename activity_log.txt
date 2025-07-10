@@ -8,4 +8,25 @@ sudo touch /srv/cyberlab/README.md
 #creating activity_log.txt
 sudo touch /srv/cyberlab/activity_log.txt
 
+#User & Group Management
+#adding users neo, trinity, morpheus
+
+sudo adduser neo
+sudo adduser trinity
+sudo adduser morpheus
+
+# adding groups
+sudo groupadd redteam
+sudo groupadd analysts
+
+#adding users to groups
+#neo and trinity to redteam
+
+sudo usermod -aG redteam neo
+sudo usermod -aG redteam trinity
+
+sudo usermod -aG analysts morpheus
+
+#granting morpheus sudo rights
+sudo usermod -aG sudo morpheus
 
