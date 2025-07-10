@@ -1,0 +1,11 @@
+#creating a folder
+
+sudo mkdir /srv/cyberlab
+
+#creating a README.md
+sudo touch /srv/cyberlab/README.md
+
+#creating activity_log.txt
+sudo touch /srv/cyberlab/activity_log.txt
+
+
