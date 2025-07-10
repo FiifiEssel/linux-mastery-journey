@@ -1,4 +1,4 @@
-#creating a folder
+#INITIAL SET-UP
 
 sudo mkdir /srv/cyberlab
 
@@ -8,7 +8,7 @@ sudo touch /srv/cyberlab/README.md
 #creating activity_log.txt
 sudo touch /srv/cyberlab/activity_log.txt
 
-#User & Group Management
+#USER & GROUP MANAGEMENT
 #adding users neo, trinity, morpheus
 
 sudo adduser neo
@@ -30,3 +30,30 @@ sudo usermod -aG analysts morpheus
 #granting morpheus sudo rights
 sudo usermod -aG sudo morpheus
 
+
+#DIRECTORY AND FILE PERMISSIONS
+#creating a directory in the /srv/redteam-data
+
+sudo mkdir /srv/redteam-data
+
+#setting ownership to redteam
+sudo chown :redteam /srv/redteam-data
+
+#applying permissions for shared collaboration
+sudo chmod 2770 redteam-data
+
+#creating a file /srv/cyberlab/brief.txt
+#setting ownership to morpheus and group analysts
+sudo chown :morpheus /srv/cyberlab/brief.txt
+sudo chown :analysts /srv/cyberlab/brief.txt
+
+#adding permssions to only morpheus and analysts
+sudo chmod 2770 /srv/cyberlab/brief.txt
+
+#CREATING A BASH SCRIPT
+#creating a script in the /srv/cyberlab directory
+vi /srv/cyberlab/init_report.sh
+
+#scripts prints an output
+#!/bash/script
+echo "Red Team Lab Bootstrapped"
